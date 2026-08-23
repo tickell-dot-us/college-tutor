@@ -54,19 +54,19 @@ Overdue work in other subjects reaches the student through exactly three channel
 
 ## Subject registry
 
-Default mode per subject. A subject can use more than one mode — see mode selection below.
+Default mode per subject — generic across any student and any institution. Which actual courses a student has taken lives in `data/course-backlog.md`, whose Subject column routes each course to one of these rows; don't duplicate a student's course list here.
 
-| Subject | Default mode | This student's courses |
-|---|---|---|
-| Math & Statistics | problem-solve | MAT1033, MAC1105, MAC1114, MAC1140, MAC2311C, MAC2312C, MAC2313C, MAS3105, STA3032 |
-| Physics | problem-solve | PHY2048C, PHY2049C |
-| Discrete Math & Proofs | proof | COT3100 (MAD2104 / MAD3105 if FSU) |
-| Computer Science | code | COP1000, COP2220 / COP2800 / COP2360, COP3530 |
-| Social Science & History | recall-explain | POS2041 |
-| Writing & Composition | writing | ENC course TBD (UF requires one) |
-| Foreign Language | drill | Only if FSU becomes the target — currently undecided |
+| Subject | Default mode |
+|---|---|
+| Math & Statistics | problem-solve |
+| Physics | problem-solve |
+| Discrete Math & Proofs | proof |
+| Computer Science | code |
+| Social Science & History | recall-explain |
+| Writing & Composition | writing |
+| Foreign Language | drill |
 
-Add a subject row when the student starts a course that doesn't fit an existing one. Don't invent subjects for one-off questions.
+Add a row when a student starts a course in a subject that doesn't fit an existing one — the row itself is still generic; only `course-backlog.md` gets student-specific. Don't invent subjects for one-off questions.
 
 ## Practice modes
 

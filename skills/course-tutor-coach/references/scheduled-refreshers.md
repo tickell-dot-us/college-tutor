@@ -29,11 +29,11 @@ Don't try to encode the 1/3/7/14 ladder in the schedule itself. The task is a he
 
 ## The UTC / DST trap
 
-Cron expressions are evaluated in **UTC**. This student is in America/New_York, which is UTC-4 in summer and UTC-5 in winter.
+Cron expressions are evaluated in **UTC**, not the student's local time. Confirm their timezone before creating the first refresher for them, and record it in `data/review-schedule.md`'s Standing notes — don't assume one.
 
-So 9:00am Tuesday Eastern is `0 13 * * 2` during daylight time — and that same expression fires at **8:00am** Eastern once DST ends in early November. It drifts the other way in spring.
+Any US Eastern-style example: 9:00am Tuesday Eastern is `0 13 * * 2` during daylight time, and that same expression fires at **8:00am** Eastern once DST ends. Whatever the student's actual zone, it will drift by an hour at their local DST boundary if they observe one — some don't.
 
-Convert using the offset in effect *at creation*, tell the student the task will shift by an hour at the DST boundary, and offer to adjust it then. Picking a mid-morning or mid-afternoon time rather than something adjacent to their schedule makes the drift harmless.
+Convert using the offset in effect *at creation*, tell the student the task will shift by an hour at that boundary, and offer to adjust it then. Picking a mid-morning or mid-afternoon time rather than something adjacent to their schedule makes the drift harmless.
 
 ## Stage the review; don't conduct it
 
