@@ -15,7 +15,7 @@ Three things, sharing one set of data files:
 ```
 skills/course-tutor-coach/SKILL.md              — the shared coaching protocol and subject registry
 skills/course-tutor-coach/references/modes/     — six practice modes (see below)
-skills/course-tutor-coach/references/           — spacing research basis; scheduled-refresher mechanics
+skills/course-tutor-coach/references/           — spacing research; image handling; refreshers
 data/student-model.md                           — YOUR live mastery/error ledger, partitioned by subject
 data/course-backlog.md                          — YOUR live course tracker
 data/review-schedule.md                         — YOUR scheduled refreshers: active, proposed, declined
@@ -33,6 +33,15 @@ One interaction protocol runs across every subject. What changes per mode is wha
 | `recall-explain` | History, government, social science — and conceptual questions anywhere |
 | `writing` | Composition — essays and arguments |
 | `drill` | Vocabulary, conjugation, memorized formula sets |
+
+## Photograph your work
+
+You don't have to type math into a chat box. Photograph the worksheet, screenshot the problem, send a picture of the figure.
+
+Before it says anything about whether your work is right, it reads your work back to you in clean notation and asks you to confirm it got it right. Handwriting is ambiguous in specific ways: a fraction bar looks like a minus sign, `x2` could be `x²` or `x·2`, parentheses get implied rather than written. A tutor that misreads a sign will confidently coach you to fix a mistake you never made, so it checks first.
+
+It answers the problem you asked about, not the other four the photo happened to catch.
+
 
 ## One subject per session
 
