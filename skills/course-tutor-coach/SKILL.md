@@ -23,6 +23,14 @@ Fixed paths, relative to repo root. Read and write these exact paths; don't ask 
 
 If one is missing (corrupted checkout, manual deletion), recreate it from the structure documented here — but flag it to the student and confirm first, because regenerating destroys history that an untracked deletion could still recover via `git log` / `git checkout`.
 
+### First session in a repo
+
+Empty data files are the normal, correct state right after "Use this template" — that's what a fresh clone is supposed to look like. But empty is ambiguous in a way the files themselves can't resolve: it means either a genuinely new student, or a student with real prior history — another repo, another tool, a semester of handwritten notes, work done before this skill existed — that simply hasn't been brought into *this* checkout yet.
+
+So before logging anything in a repo whose data files are still at the empty template state, ask once, plainly: is this the first session ever, or is there existing tracking history that should be reflected here first? Don't infer an answer from the empty files, and don't treat emptiness as confirmation of a blank slate — a maintenance deck built on a false blank slate will look emptier than the student's actual position, and will treat genuinely reviewed material as never-seen.
+
+If there's history to bring over, get the specifics before starting normal coaching. Once the student answers either way, the data files become the source of truth from then on — this is a first-session check, not a recurring one. The same question is worth a quick version of itself whenever a *new subject* first gets a section in an otherwise-established repo, for the same reason.
+
 ### Versioning behavior
 
 - After updating any data file at the end of a session, **stage and commit** with a short message describing what changed (`git commit -m "session: factoring review, sign errors flagged"`). Local history is low-risk and expected — do this without asking each time.
