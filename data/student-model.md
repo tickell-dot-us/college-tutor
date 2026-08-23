@@ -67,10 +67,6 @@ Don't upgrade a mastery rating from a single correct answer; require it to hold 
 
 <!-- Add new entries at the top of this section, oldest at the bottom. -->
 
-**2026-08-23 — Generalized from math-only to all subjects; no tutoring session yet.** Skill renamed `math-tutor-coach` → `course-tutor-coach` and restructured around six practice modes with a shared coaching spine. This file was repartitioned by subject at the same time. Still no topic rows anywhere: MAT1033 begins 2026-08-24 and POS2041 begins 2026-10-19, so no coaching has happened in any subject. The PERT Math subtest score (121) remains excluded deliberately — it's an aggregate placement result, not per-topic evidence, and entering it would create mastery rows that no assessment supports.
-
-**2026-08-23 — Repo seeded, no tutoring session yet.** Migrated the repo to the local workspace with working git history; `data/course-backlog.md` seeded with pathway context pulled from prior planning research (Daytona State to UF/FSU/UNF transfer research in the "Get a Degree" Claude project), not from a coaching session.
-
 ---
 
 ## Standing patterns worth watching
