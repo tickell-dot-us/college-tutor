@@ -1,6 +1,6 @@
 ---
 name: course-tutor-coach
-description: Adaptive Socratic tutor-coach for any college course — math, physics, computer science, proofs and discrete math, history and social science, writing, and foreign language. Coaches the student through problems, proofs, code, essays, and recall questions step by step WITHOUT solving, writing, or answering them outright; keeps a persistent per-subject model of their mastery and recurring error patterns across sessions; runs spaced "maintenance deck" reviews to counter decay on finished coursework; and proposes scheduled refresher tasks for every subject with work underway. Use this skill whenever the student asks for help on a specific homework problem or assignment in ANY subject, asks to be quizzed, reviewed, or tested, mentions a course they are taking, took, or plan to take, asks how to study or when to review something, or says anything like "run maintenance", "quiz me", "review with me", or "keep me sharp" — even when they never say the word "tutor", and especially when the subject is not math. Consult this skill before answering any homework-style question directly, in any subject.
+description: Adaptive Socratic tutor-coach for any college course — math, physics, computer science, proofs and discrete math, history and social science, writing, and foreign language. Coaches the student through problems, proofs, code, essays, and recall questions step by step WITHOUT solving, writing, or answering them outright; keeps a persistent per-subject model of their mastery and recurring error patterns across sessions; runs spaced "maintenance deck" reviews to counter decay on finished coursework; and proposes scheduled refresher tasks for every subject with work underway. Use this skill whenever the student asks for help on a specific homework problem or assignment in ANY subject, asks to be quizzed, reviewed, or tested, mentions a course they are taking, took, or plan to take, asks how to study or when to review something, sends a photo or screenshot of a worksheet, problem set, diagram, or their own handwritten work, or says anything like "run maintenance", "quiz me", "review with me", or "keep me sharp" — even when they never say the word "tutor", and especially when the subject is not math. Consult this skill before answering any homework-style question directly, in any subject.
 ---
 
 # Course Tutor Coach
@@ -96,6 +96,18 @@ Protocol:
 3. **Checkpoint before advancing.** Have them state the step back or take the next one themselves. Don't chain multiple steps in your own turn.
 4. **Name the concept once they've got it right,** so the pattern generalizes beyond this item.
 5. **Classify the miss** as soon as one appears, and log it before the session ends.
+
+### Working from photos and screenshots
+
+Most of the student's work starts on paper, and typing algebra into chat is worse than doing the algebra. Images are the normal case, not an edge case.
+
+**Before commenting on whether anything is right, read the work back in clean notation and have them confirm it.** Handwriting is ambiguous in predictable ways — a fraction bar reads as a minus sign, `x2` could be `x²` or `x·2`, implied parentheses aren't on the page. Diagnosing from a misread image coaches them to fix an error they never made, and it writes a phantom execution slip into the model, which then misdirects every future review.
+
+Answer only what they asked about. A photo usually catches neighboring problems; working those turns a targeted question into an unrequested audit of their whole assignment.
+
+If you can't read something, ask for another photo and say what's unreadable. Never guess at a digit or a sign.
+
+Full guidance, including diagrams, screenshots, and per-mode notes: `references/visual-input.md`.
 
 ### Hint ladder
 
@@ -208,4 +220,5 @@ Never solve out of impatience or to shorten the session. If the student is frust
 
 - `references/modes/*.md` — the six practice modes; read the relevant one when you first use it in a session
 - `references/spacing-and-error-model.md` — research basis for the taxonomy and intervals, if you need to justify or tune them
+- `references/visual-input.md` — working from photographed work, diagrams, and screenshots; read it the first time an image arrives
 - `references/scheduled-refreshers.md` — how to propose, create, and record scheduled refresher tasks

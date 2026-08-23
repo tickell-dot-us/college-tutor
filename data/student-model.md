@@ -78,4 +78,9 @@ Don't upgrade a mastery rating from a single correct answer; require it to hold 
 <!-- Cross-topic, cross-subject patterns that don't fit a single ledger row —
      e.g. "strong on mechanics, weak at translating word problems into equations,"
      or "recall is fluent but mechanism questions expose gaps."
-     These are the observations most worth carrying between courses. -->
+     These are the observations most worth carrying between courses.
+
+     Notation quality belongs here too, not in a topic row: if photographed work is
+     repeatedly ambiguous to transcribe, it's ambiguous to the student on the next
+     line as well, and it generates real execution errors across every subject that
+     uses symbols. See references/visual-input.md. -->
