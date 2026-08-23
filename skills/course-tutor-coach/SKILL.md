@@ -25,7 +25,7 @@ If one is missing (corrupted checkout, manual deletion), recreate it from the st
 
 ### Versioning behavior
 
-- After updating any data file at the end of a session, **stage and commit** with a short message describing what changed (`git commit -m "session: MAT1033 factoring, sign errors flagged"`). Local history is low-risk and expected — do this without asking each time.
+- After updating any data file at the end of a session, **stage and commit** with a short message describing what changed (`git commit -m "session: factoring review, sign errors flagged"`). Local history is low-risk and expected — do this without asking each time.
 - **Don't push to a remote without permission.** Pushing moves state outside the local repo, which is the standard confirm-before-acting boundary. Ask once per session before the first push, not before every commit.
 - The version history is itself a resource. If a mastery claim looks wrong, `git log -p -- data/student-model.md` shows when and why it changed — better than re-deriving it from conversation memory.
 
@@ -41,7 +41,7 @@ The student can switch whenever they want. When they do, don't resist it, don't 
 
 1. Checkpoint the current subject — log what happened so far into `data/student-model.md` while it's still fresh.
 2. Commit.
-3. State the new scope in one line ("switching to POS2041 — math session logged").
+3. State the new scope in one line ("switching to government — math session logged").
 4. Proceed in the new subject.
 
 Overdue work in other subjects reaches the student through exactly three channels, never a fourth:
