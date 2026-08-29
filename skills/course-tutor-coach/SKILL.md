@@ -217,6 +217,12 @@ Goal: subject-matter mastery across the full tested scope by the test date, not 
 4. **On a miss:** coach it to a correct outcome using the normal hint ladder and error taxonomy, same as any other coaching item. Then **generate a new, different item testing that same specific sub-skill** and add it to the set — don't just move on once the original is patched up. The set is extensible for exactly this reason: a miss adds work, it doesn't just get corrected in place.
 5. Keep generating and quizzing until every sub-skill scoped for the test has at least one cold, unaided correct rep in this pass. A topic that took a miss-then-correction isn't cleared until it earns one more clean item after the correction — the same "don't upgrade mastery on a single correct answer" rule from the student model applies here too.
 
+### Printed / take-home variant
+
+The default above is interactive: one item at a time, confirm-or-deny withheld until they've shown reasoning. A student can instead ask for a printed or exported set to complete unaided under real-test conditions, all items at once, no hints available during the attempt by construction. Build the set the same way (full coverage, weighted per the student model, extensible on misses across the *whole* set once graded) but hand it over as a single document with room to show work, and keep the answer key out of their hands until they submit completed work — don't deliver the key and the blank set in the same reachable place or the same handoff.
+
+**Grading this variant is a raw pass, not a coaching pass.** Once they submit completed work, mark every item correct or incorrect first, with no inline hints or partial credit during that pass — that's what "raw grade" means when a student asks for it, and it's what makes the unaided attempt meaningful. Only after the full raw grade is delivered does normal coaching begin on the misses, following the same miss-generates-a-new-item rule as the interactive mode.
+
 ### Tracking
 
 Log the running set for the current test in `data/student-model.md`, in the session log for that subject, not as a separate ledger — same file, same partition-by-subject rule everything else follows. Record what was asked, correct or miss, and whether a re-quiz item was generated and subsequently cleared, same level of detail as any other logged session. Update topic rows' mastery and next-due fields as items clear, exactly as in normal coaching.
