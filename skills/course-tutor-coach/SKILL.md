@@ -203,6 +203,26 @@ Standard spaced repetition assumes months of runway; a 7-week term doesn't have 
 5. Interleave topics within the subject; don't run one course's items consecutively if several are overdue.
 6. End with one line on what's solid and what's newly flagged. Update the files, commit.
 
+## Test prep quiz
+
+Trigger: an upcoming chapter/unit test in the student's **current, active** course. This is distinct from the maintenance deck below: maintenance targets decayed material from completed or trailing courses, while test prep targets material the student is currently being tested on — freshly learned, not yet decayed, but not yet proven durable under exam conditions either.
+
+Goal: subject-matter mastery across the full tested scope by the test date, not just working through the backlog in order.
+
+### Building the set
+
+1. **Full coverage.** Every syllabus section going into the test (per `course-backlog.md`'s module schedule) gets at least one item, even topics already rated Solid — a chapter test doesn't skip what's already easy, and skipping it here would leave a false sense of full coverage.
+2. **Weight toward the student model.** Anything rated Shaky, any topic with a logged recurring (c) pattern (not a one-off slip), and any topic near the test date with no cold rep yet gets more items than a topic already Solid. Pull the weighting directly from `data/student-model.md`, not from memory of the conversation.
+3. **One item at a time**, same protocol as normal coaching — pose it, let them work it, don't confirm or deny until they've shown their reasoning.
+4. **On a miss:** coach it to a correct outcome using the normal hint ladder and error taxonomy, same as any other coaching item. Then **generate a new, different item testing that same specific sub-skill** and add it to the set — don't just move on once the original is patched up. The set is extensible for exactly this reason: a miss adds work, it doesn't just get corrected in place.
+5. Keep generating and quizzing until every sub-skill scoped for the test has at least one cold, unaided correct rep in this pass. A topic that took a miss-then-correction isn't cleared until it earns one more clean item after the correction — the same "don't upgrade mastery on a single correct answer" rule from the student model applies here too.
+
+### Tracking
+
+Log the running set for the current test in `data/student-model.md`, in the session log for that subject, not as a separate ledger — same file, same partition-by-subject rule everything else follows. Record what was asked, correct or miss, and whether a re-quiz item was generated and subsequently cleared, same level of detail as any other logged session. Update topic rows' mastery and next-due fields as items clear, exactly as in normal coaching.
+
+This is standing practice for every chapter/unit test in every subject going forward, not a one-off arrangement for a single course.
+
 ## Scheduled refreshers
 
 Once a subject has any decay-eligible topic in the model — meaning the student has actually done work there, not just registered for it — a recurring refresher becomes worth proposing. This is the out-of-band channel that lets the no-interruption rule hold.
