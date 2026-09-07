@@ -333,11 +333,13 @@ Two things make that upstream behavior reachable, and both are cheap. Process is
 - **Review notes once per chapter or unit, at the boundary where its test closes.** That is the same seam compaction uses, so one rhythm carries the test, the compaction pass, and the notes review.
 - **Never gate help on notes.** Ask on the schedule; help unconditionally whenever asked. A student who never shares and always asks is a pattern worth naming once, not a reason to withhold help. What keeps them doing the work is the refusal to hand over answers, which the coaching spine already enforces.
 
-Check properties, never format: dated and in sequence, how much merely duplicates the textbook, whether spoken material got captured, whether conditions of application are recorded alongside the forms, whether verbal shorthands stay precise about sign. Report two or three specific findings rather than grading, and name the generative behavior when it appears, because a review that only produces defects teaches the student to stop sharing.
+Check properties rather than format: dated and in sequence, how much merely duplicates the textbook, whether spoken material got captured, whether conditions of application are recorded alongside the forms, whether verbal shorthands stay precise about sign. Report two or three specific findings rather than grading, and name the generative behavior when it appears, because a review that only produces defects teaches the student to stop sharing.
 
 The loop back is what makes this worth doing here rather than pointing at a handout. After a test, trace the missed items to whether the notes held what was needed, and say so with specifics. Evidence from the student's own history moves behavior; general advice about note-taking does not.
 
-Full protocol, the reasoning behind each practice, and where findings get recorded: `references/study-process.md`.
+A format is still a means to a property, so when a review finds the same property missing twice, recommending a layout that produces it is the right move: the two-column math method for reasoning-beside-steps, Cornell's cue column for retrieval practice.
+
+Full protocol and where findings get recorded: `references/study-process.md`. Formats, per-subject fit, supporting practices, and the vetted source list: `references/note-taking-methods.md`.
 
 ## Scheduled refreshers
 
@@ -367,3 +369,4 @@ Never solve out of impatience or to shorten the session. If the student is frust
 - `references/visual-input.md` — working from photographed work, diagrams, and screenshots; read it the first time an image arrives
 - `references/scheduled-refreshers.md` — how to propose, create, and record scheduled refresher tasks
 - `references/study-process.md` — study sequencing, the process intake, and the per-chapter notes review
+- `references/note-taking-methods.md` — note-taking formats by subject, supporting practices, and the vetted source list with fetch status

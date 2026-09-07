@@ -38,7 +38,7 @@ A student who never shares notes and asks for help constantly is showing a real 
 
 ### What the review checks
 
-Not format. The tutor never observes whether a format is being followed, and the evidence doesn't strongly favor one anyway. Check properties instead:
+Properties, not format. The tutor never observes whether a format is being followed, only what ended up on the page, and it should never grade one. Check these:
 
 1. **Dated and in sequence.** Undated pages can't be joined to the ledger's dated log entries, and a Notes cell pointing at "the 3.4 notes" resolves to nothing.
 2. **How much is recoverable from the textbook?** (§2.2) A page that reproduces boxed definitions cost attention during lecture and returns nothing on review.
@@ -79,7 +79,7 @@ An always-available tutor lowers the cost of failing to capture something in the
 
 ## What this is not
 
-- Not a format prescription. Cornell, outline, mapping: unobservable from here, and not clearly separable in the evidence.
+- Not a format prescription, though not format-indifferent either. A format is a mechanism for producing a property: the two-column math layout forces reasoning to sit beside each step, and Cornell's cue column forces question-generation after class. So evaluate properties, and recommend a format only once a review has found the matching property missing more than once, framed as a means to that property rather than a system to adopt. Formats, per-subject fit, supporting practices, and the source list: `references/note-taking-methods.md`.
 - Not an audit. A question about problem 7 doesn't license a review of the student's habits.
 - Not a separate curriculum. It runs on the existing rhythm, at an existing boundary, reporting into existing files.
 
