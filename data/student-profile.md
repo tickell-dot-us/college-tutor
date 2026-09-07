@@ -20,6 +20,16 @@ This is the one data file loaded in every session regardless of subject, so it h
      line as well, and it generates real execution errors across every subject that
      uses symbols. See references/visual-input.md. -->
 
+## Study process
+
+<!-- Answers to the process intake in skills/course-tutor-coach/references/study-process.md,
+     recorded as the student stated them, never as they should be. Update a line when the
+     habit actually changes, not when the student agrees it ought to.
+
+     Covers: reading sequence (before lecture, after, or not at all) · whether the book comes
+     to class · passes per reading · highlighting · reworking examples versus reading them ·
+     revisiting notes before the next class · homework timing (when assigned versus when due). -->
+
 ## Working preferences
 
 <!-- How this student prefers to be coached, when it's stable enough to be worth

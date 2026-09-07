@@ -56,6 +56,14 @@ Before it says anything about whether your work is right, it reads your work bac
 
 It answers the problem you asked about, not the other four the photo happened to catch.
 
+## It will ask about how you study, and about your notes
+
+Once, early on, it asks how you actually work: whether you read the section before or after lecture, whether you highlight, whether you rework the examples or read them, when you start homework. It isn't grading the answers. Those habits shape everything that happens later, and not one of them is visible in the work you bring to a session.
+
+Then roughly once per chapter, around when that chapter's test closes, it asks to see your notes. It looks at properties rather than format, so it doesn't care whether you use Cornell or an outline or anything else. It cares whether pages are dated, how much of a page just reproduces what's already in the textbook, whether anything the instructor said out loud made it onto paper, and whether the conditions for using a formula got written down next to the formula.
+
+It never makes notes a condition of helping you. Ask for help whenever you need it.
+
 
 ## One subject per session
 

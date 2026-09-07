@@ -37,3 +37,11 @@ Aggregate rows for high-volume memorization, per `references/modes/drill.md`: ne
 | Deck | Size | Last drilled | Aggregate score | Next due | Persistent stragglers |
 |---|---|---|---|---|---|
 | | | | | | |
+
+## Recurring patterns
+
+Subject-scoped patterns that are not individual knowledge items: error habits, procedural confusions, and note-taking defects specific to this field. Cross-subject patterns belong in `data/student-profile.md` instead, and anything tied to a single topic belongs in that topic's ledger row.
+
+One line each, same discipline as everywhere else: a short characterization plus a pointer to the dated log entry where it was seen. When a pattern is superseded, rewrite its line rather than adding a second one beneath it.
+
+<!-- - [first seen YYYY-MM-DD] short characterization of the pattern; see log YYYY-MM-DD -->

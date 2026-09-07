@@ -55,6 +55,8 @@ So before logging anything in a repo whose data files are still at the empty tem
 
 If there's history to bring over, get the specifics before starting normal coaching. Once the student answers either way, the data files become the source of truth from then on — this is a first-session check, not a recurring one. The same question is worth a quick version of itself whenever a *new subject* first gets a section in an otherwise-established repo, for the same reason.
 
+The process intake in `references/study-process.md` belongs in this same first conversation. How the student reads, takes notes, and times their homework is durable, cross-subject, and not inferable from anything they will ever bring you.
+
 ### Versioning behavior
 
 - After updating any data file at the end of a session, **stage and commit** with a short message describing what changed (`git commit -m "session: factoring review, sign errors flagged"`). Local history is low-risk and expected — do this without asking each time.
@@ -236,7 +238,7 @@ Compaction moves accumulated narrative out of a ledger's Notes column and into t
 
 **Compaction is a move, not a summary.** Relocate the narrative verbatim into the dated log entry it already belongs to, and leave the Notes cell holding a short characterization and that date. Nothing is condensed, paraphrased, or dropped in the ordinary case, which makes the ordinary case lossless by construction. Condense only where a Notes cell accumulated commentary across several sessions with no single matching log entry, and say so when you do rather than condensing silently.
 
-**Trigger: a unit of material finishing.** A topic's rows are hot while its material is being taught and tested, because test-prep weighting reads them directly. Once its test closes, that material becomes maintenance rather than active and the ledger no longer needs the narrative inline. So compact a chapter's or unit's rows once its test has closed. Never compact material in the run-up to a test on that same material. Where a course has no chapter tests, use whatever boundary it does have — module, unit, exam — and absent any structure at all, compact at course completion as part of archival.
+**Trigger: a unit of material finishing.** A topic's rows are hot while its material is being taught and tested, because test-prep weighting reads them directly. Once its test closes, that material becomes maintenance rather than active and the ledger no longer needs the narrative inline. So compact a chapter's or unit's rows once its test has closed. Never compact material in the run-up to a test on that same material. Where a course has no chapter tests, use whatever boundary it does have — module, unit, exam — and absent any structure at all, compact at course completion as part of archival. The notes review in `references/study-process.md` runs at this same boundary, deliberately: one rhythm rather than three.
 
 **Snapshot first, tagged.** Every compaction pass is preceded by a dedicated commit holding the verbose state and nothing else, tagged so it is retrievable by name instead of by hunting SHAs:
 
@@ -321,6 +323,22 @@ Log the running set for the current test as an ordinary dated entry in that cour
 
 This is standing practice for every chapter/unit test in every subject going forward, not a one-off arrangement for a single course.
 
+## Study process and notes
+
+Everything else in this skill runs downstream of how the student reads, listens, and records. Someone who arrives at a lecture cold can't tell what's already in the book, so they transcribe it defensively; the resulting pages duplicate the text and carry none of what the instructor actually said; two weeks later that surfaces in the ledger as a (b) or (d) error nobody traces back to its cause.
+
+Two things make that upstream behavior reachable, and both are cheap. Process is not inferable from the work a student brings, but it is trivially available by asking. And notes can be requested on a predictable schedule, which is a different thing from requiring them before helping.
+
+- **Ask about process once, early.** Reading sequence, note habits, homework timing. Record the answers in `data/student-profile.md` under Study process.
+- **Review notes once per chapter or unit, at the boundary where its test closes.** That is the same seam compaction uses, so one rhythm carries the test, the compaction pass, and the notes review.
+- **Never gate help on notes.** Ask on the schedule; help unconditionally whenever asked. A student who never shares and always asks is a pattern worth naming once, not a reason to withhold help. What keeps them doing the work is the refusal to hand over answers, which the coaching spine already enforces.
+
+Check properties, never format: dated and in sequence, how much merely duplicates the textbook, whether spoken material got captured, whether conditions of application are recorded alongside the forms, whether verbal shorthands stay precise about sign. Report two or three specific findings rather than grading, and name the generative behavior when it appears, because a review that only produces defects teaches the student to stop sharing.
+
+The loop back is what makes this worth doing here rather than pointing at a handout. After a test, trace the missed items to whether the notes held what was needed, and say so with specifics. Evidence from the student's own history moves behavior; general advice about note-taking does not.
+
+Full protocol, the reasoning behind each practice, and where findings get recorded: `references/study-process.md`.
+
 ## Scheduled refreshers
 
 Once a subject has any decay-eligible topic in the model — meaning the student has actually done work there, not just registered for it — a recurring refresher becomes worth proposing. This is the out-of-band channel that lets the no-interruption rule hold.
@@ -348,3 +366,4 @@ Never solve out of impatience or to shorten the session. If the student is frust
 - `references/spacing-and-error-model.md` — research basis for the taxonomy and intervals, if you need to justify or tune them
 - `references/visual-input.md` — working from photographed work, diagrams, and screenshots; read it the first time an image arrives
 - `references/scheduled-refreshers.md` — how to propose, create, and record scheduled refresher tasks
+- `references/study-process.md` — study sequencing, the process intake, and the per-chapter notes review
