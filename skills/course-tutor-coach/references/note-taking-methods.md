@@ -18,7 +18,31 @@ Structure: a narrow left cue column, a wide right notes column, and a summary st
 
 The property it produces is retrieval practice. The cue column turns a page of notes into a self-quiz, which is what makes review something other than rereading.
 
-The Cornell page also asserts that handwriting notes beats typing for retention. Treat that as weaker than the rest of this file: the underlying literature is more contested than the page implies, with mixed replication of the best-known study [TRAINING, not re-verified]. Worth mentioning to a student who asks, not worth pushing on one who types.
+Cornell's page also asserts that handwriting beats typing for retention. That is roughly true, considerably smaller than the popular version of it, and the mechanism usually cited for it has not held up. Details below, since this is the note-taking claim students are most likely to have heard and most likely to have heard wrong.
+
+### Handwriting versus typing: what the evidence supports
+
+Reviewed 2026-09 against primary sources.
+
+The famous study (Mueller and Oppenheimer, 2014, n = 67) reported an advantage for longhand concentrated on *conceptual* questions, explained by generative processing: typists transcribe verbatim, longhand forces paraphrase. Two direct replications did not reproduce it. Morehead, Dunlosky and Rawson (2019) found performance did not consistently differ between longhand, laptop, eWriter, or even a no-notes control group. Urry et al. (2021, n = 145, more than double the original) reproduced the original's null on factual questions and failed to find the conceptual advantage that was the original's entire point; their mini meta-analysis across eight similar studies was also non-significant.
+
+The current best synthesis is a 2024 meta-analysis (Flanigan, Wheeler, Colliot, Lu and Kiewra; 24 studies, 3,005 undergraduates). It finds a real but small advantage for handwriting: Hedges' g = 0.248, 95% CI 0.181 to 0.315, with no detectable publication bias on either funnel-plot inspection or Egger's test.
+
+That is consistent with the failed replications rather than contradicting them. An effect of g ≈ 0.25 needs roughly 500 participants to detect reliably at conventional power, and the individual replications were far below that. Null results in underpowered studies are what a small true effect looks like.
+
+What did not survive is the mechanism. The meta-analysis found no meaningful difference between factual (g = 0.246) and conceptual (g = 0.199) outcomes, so the claim that deeper encoding shows up specifically on conceptual questions is not supported in aggregate.
+
+Three findings from that literature matter more than the headline:
+
+- **Review is the largest moderator.** With a formal review period, g = 0.421. Without one, g = 0.208; optional review, 0.195. Reviewing roughly doubles the handwriting advantage, which puts the weight on the second pass rather than on the medium.
+- **Verbatim overlap predicts worse performance while word count predicts better** (Urry et al.). Typed notes are both longer and more verbatim, and those pull in opposite directions, which is part of why the medium effect stays small. Handwriting does not by itself prevent transcription: a student copying the textbook's boxed definitions by hand has taken on the medium and none of the benefit.
+- **Typed note-takers recorded zero lecture images; handwriters recorded several.** In any course carrying graphs, diagrams, or geometry, that gap plausibly matters more than the general effect does.
+
+Discount the EEG study currently driving headlines (van der Weel and van der Meer, 2024) as evidence about note-taking. Thirty-six usable participants copied familiar words with a digital pen or typed them with one finger. No lecture, no meaningful notes, no unfamiliar material, no memory test, and the typed words did not stay visible while the handwritten ones did. It shows different brain connectivity during writing, which is a different question from whether notes work.
+
+Caveats on the meta-analysis itself, from its own authors: every included study used a single lecture, so none of it speaks to a semester; all participants were college undergraduates; only one of the twenty-four studies examined the revision stage at all; and no included study accounted for students with disabilities, so the authors explicitly caution against applying any of this to a student who needs accommodations.
+
+**Practical position for this skill.** Recommend handwriting weakly, never over an accommodation or a settled preference. Recommend reviewing strongly. A student who types and reviews is ahead of a student who handwrites and does not.
 
 ## Two-column method for math
 
@@ -83,6 +107,9 @@ Fetch status recorded so future sessions don't repeat failed lookups. Re-check a
 | [Two Column Note Taking for Math Class, Cameron University](https://www.cameron.edu/storage/office-of-teaching-and-learning/study-skills/Note_Taking_Math.pdf) | The four-step two-column method | Fetched and confirmed 2026-09 |
 | [Tackling STEM Courses, Harvard Academic Resource Center](https://academicresourcecenter.harvard.edu/2023/10/03/tackling-stem-courses/) | Post-class recall practice; previewing slides before class | Fetched and confirmed 2026-09 |
 | [How to Survive Your College Math Class, Saltzman and Coffin, Clemson University, 1998](https://www.math.clemson.edu/~mjs/courses/misc/study.pdf) | Previewing, note economy, reading passes, homework and exam practice, reading and writing mathematics | Read in full 2026-09-07 from a PDF supplied directly. **The host fails automated fetching** (robots and TLS certificate errors). Do not retry the fetch; ask the student for the file if the summary in `study-process.md` is insufficient |
+| [Flanigan, Wheeler, Colliot, Lu & Kiewra (2024), *Typed Versus Handwritten Lecture Notes and College Student Achievement: A Meta-Analysis*, Educational Psychology Review 36:78](https://utstat.toronto.edu/reid/sta2212s/lecturenotesmeta.pdf) | The current best synthesis on medium: overall and by-outcome effect sizes, the review moderator, publication-bias tests, authors' own caveats | Fetched and confirmed 2026-09 |
+| [Urry et al. (2021), *Don't Ditch the Laptop Just Yet*, Psychological Science](https://journals.sagepub.com/doi/10.1177/0956797620965541) — summary via [APS Observer](https://www.psychologicalscience.org/observer/writing-notes) | Direct replication of Mueller & Oppenheimer Study 1 (n = 145); word-count and verbatim-overlap correlations | APS summary fetched and confirmed 2026-09; journal page not fetched |
+| [Morehead, Dunlosky & Rawson (2019), *How Much Mightier Is the Pen than the Keyboard for Note-Taking?*, Educational Psychology Review](https://link.springer.com/article/10.1007/s10648-019-09468-2) | Replication plus extension adding eWriter and no-notes control | Fetched and confirmed 2026-09 |
 
 Two independent corroborations worth knowing, since they raise confidence in advice a student may resist: Harvard ARC and Saltzman and Coffin §2.2 both arrive at previewing before class, and Lamar, Cameron, Harvard ARC and Saltzman and Coffin all arrive at the post-class second pass.
 
