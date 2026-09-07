@@ -1,0 +1,10 @@
+.DS_Store
+Claude outputs
+_to_delete
+
+# Retired 2026-09-07: the monolithic student model was replaced by per-course
+# ledgers under data/subjects/ and per-course logs under data/logs/. Ignored so
+# that a stray local copy in an older working tree is never re-added by the
+# `git add data/` that SKILL.md prescribes at the end of each session.
+data/student-model.md
+.commit-msg-phase1.txt

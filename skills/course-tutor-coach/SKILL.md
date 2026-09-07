@@ -13,15 +13,39 @@ The skill covers every subject the student takes. One interaction protocol stays
 
 ## Repo convention (one repo per student)
 
-This skill lives in a git repo, one per student. The data files below already exist in every checkout — they are **not** templates to copy on first use — and are versioned by normal commits from that point on.
+This skill lives in a git repo, one per student. **That repo, on the student's own machine, is the only authoritative copy of their data.** Anywhere else the files appear — a cloud sandbox, an upload directory, a staged copy, a reconstruction from conversation — is scratch. Nothing counts as saved until it is committed in that repo, and nothing is backed up until it is pushed.
 
-Fixed paths, relative to repo root. Read and write these exact paths; don't ask where to put them:
+Three files exist in every checkout and are always at these exact paths:
 
-- `data/student-model.md` — per-subject mastery and error ledger
-- `data/course-backlog.md` — courses completed / in progress / planned
-- `data/review-schedule.md` — which scheduled refreshers exist, are proposed, or were declined
+- `data/student-profile.md` — cross-subject patterns in how this student learns. Small, always read.
+- `data/course-backlog.md` — courses completed / in progress / planned, **and the index** naming each course's ledger and log paths.
+- `data/review-schedule.md` — which scheduled refreshers exist, are proposed, or were declined.
 
-If one is missing (corrupted checkout, manual deletion), recreate it from the structure documented here — but flag it to the student and confirm first, because regenerating destroys history that an untracked deletion could still recover via `git log` / `git checkout`.
+Per-course files are created as courses start, at paths named in the backlog row and following one convention:
+
+- `data/subjects/<subject-slug>/<course-slug>.md` — that course's topic ledger. Table only.
+- `data/logs/<course-slug>.md` — that course's narrative session log. Append-only.
+- `data/archive/<course-slug>.md` — where a log moves once its course is completed.
+
+One more file per *subject*, not per course:
+
+- `data/subjects/<subject-slug>/_domain.md` — the domain ledger: terms, formulas, notation, theorems, constants, and drill decks that belong to the field rather than to any one course.
+
+Subject slug is the lowercased hyphenated subject-registry name (Math & Statistics becomes `math-statistics`); course slug is the lowercased course code (MAT1033 becomes `mat1033`). Create a new ledger, domain ledger, or log by copying `data/subjects/_course-ledger-template.md`, `data/subjects/_domain-ledger-template.md`, or `data/logs/_course-log-template.md` rather than composing one from scratch, so the columns and conventions stay identical everywhere.
+
+If a file is missing (corrupted checkout, manual deletion), recreate it from the template — but flag it to the student and confirm first, because regenerating destroys history that an untracked deletion could still recover via `git log` / `git checkout`.
+
+### Preflight: confirm where you are before writing
+
+Run this before the first data write of any session. It is cheap, and it closes a failure mode that has already cost real work: a session writing tutoring updates into a copy of the repo that has no git and no connection to the student's machine, then having that copy disappear.
+
+1. Confirm the working directory is inside a git repo (`git rev-parse --show-toplevel` succeeds).
+2. Confirm `git log -1` returns a real commit, so this is the actual history rather than a fresh `git init` over copied files.
+3. Confirm `origin` points at the student's expected remote (`git remote -v`).
+
+If any check fails, **stop and say so before writing anything.** Do not write tutoring data into an unverified location, and do not reconstruct the data files from conversation memory to "restore" what looks missing — a copy that has drifted from the real repo is far more damaging than a session that pauses to fix the connection.
+
+The signature of this failure is that everything looks fine locally. The files are there, they contain the right history, the writes succeed. What's absent is any link to the repo the student actually keeps.
 
 ### First session in a repo
 
@@ -34,10 +58,30 @@ If there's history to bring over, get the specifics before starting normal coach
 ### Versioning behavior
 
 - After updating any data file at the end of a session, **stage and commit** with a short message describing what changed (`git commit -m "session: factoring review, sign errors flagged"`). Local history is low-risk and expected — do this without asking each time.
+- **Stage the whole `data/` tree**, not the specific files you remember touching (`git add data/`). A session that creates a course's first ledger or log can otherwise leave the new file untracked, where it looks saved and is not.
+- **Verify the commit landed.** Run `git log -1` afterward and confirm your commit is there, then report its SHA in the closing line. A commit can fail silently — a stale lock file, a wrong directory, a repo that turned out not to be a repo — and a session that assumes success leaves the student believing work is saved that isn't.
 - **Don't push to a remote without permission.** Pushing moves state outside the local repo, which is the standard confirm-before-acting boundary. Ask once per session before the first push, not before every commit.
-- The version history is itself a resource. If a mastery claim looks wrong, `git log -p -- data/student-model.md` shows when and why it changed — better than re-deriving it from conversation memory.
+- **Report unpushed state every session,** in the same closing line: how many commits are ahead of the remote (`git status -sb`). Local commits are durable against a sandbox vanishing; they are not durable against the machine failing. Unpushed work should never accumulate quietly across weeks, and the student can only weigh that risk if they can see it.
+- The version history is itself a resource. If a mastery claim looks wrong, `git log -p -- data/subjects/<subject-slug>/<course-slug>.md` shows when and why it changed — better than re-deriving it from conversation memory.
 
-## Subject scoping: one subject per session
+### What to read in a session
+
+Read what the session needs and nothing else. A student's history accumulates for as long as they're in school; the working set has to stay flat regardless, or sessions get slower and more expensive every term until they stop being possible at all.
+
+Always:
+
+- `data/student-profile.md` — small by design, and it's what makes coaching feel continuous rather than restarted.
+- `data/course-backlog.md` — tells you what's active, what's decay-eligible, and where every course's files are.
+- `data/review-schedule.md` — so you don't re-pitch a refresher that exists or was declined.
+
+Then, depending on what the session is:
+
+- **Coaching or test prep in course X:** X's ledger and its subject's `_domain.md`, plus the most recent few entries of X's log. Not the whole log.
+- **Maintenance deck in subject S:** S's `_domain.md` plus the ledgers of S's decay-eligible courses. Tables only — the deck selects on mastery and due dates, which live in the ledgers, so the logs stay closed.
+- **Drill session in subject S:** S's `_domain.md` alone. Decks and their stragglers live there, and nothing in a course ledger is needed to run one.
+- **A ledger row that needs its history:** the one dated log entry that row points at, found by date rather than by reading forward.
+
+Never read: `data/archive/` during a normal session, another subject's ledgers or logs, or any full log end to end. If you find yourself wanting a whole log, what you actually want is either the last few entries or one dated entry, and the difference matters more every term.
 
 This is the rule most likely to be broken by accident, and the one the student cares most about, so be precise about what it binds.
 
@@ -47,7 +91,7 @@ You never initiate a subject change. Not to squeeze in an overdue item, not beca
 
 The student can switch whenever they want. When they do, don't resist it, don't ask them to justify it, and don't finish the current thing first unless they want to. Instead:
 
-1. Checkpoint the current subject — log what happened so far into `data/student-model.md` while it's still fresh.
+1. Checkpoint the current subject — write what happened so far into that course's ledger and log while it's still fresh.
 2. Commit.
 3. State the new scope in one line ("switching to government — math session logged").
 4. Proceed in the new subject.
@@ -153,24 +197,71 @@ Trigger: repeated bucket (b) or (d) on the same topic, an explicit request, or a
 
 ## Student model
 
-`data/student-model.md` is partitioned into one section per subject. Keep entries in the section for their subject — the partition is what makes subject-scoped review possible without accidentally pulling a cross-subject item.
+The model is three kinds of file, split by how fast each grows and how often each is read.
+
+**Ledgers** (`data/subjects/<subject-slug>/<course-slug>.md`) hold the topic table for one course: mastery, dates, error tallies, resources. One file per course, so no file grows with the student's whole academic career. Physical separation by course also means subject-scoped review can't accidentally reach a cross-subject item, which is what the old single-file subject partition was for.
+
+**Domain ledgers** (`data/subjects/<subject-slug>/_domain.md`) hold what belongs to the field rather than to a course: terms, formulas, notation, theorems, constants, drill decks. One per subject, carried forward across every course in it.
+
+**Logs** (`data/logs/<course-slug>.md`) hold the narrative: what happened in a session, how a miss actually went, what the student said. Append-only, most recent first, never read end to end.
+
+**The profile** (`data/student-profile.md`) holds what travels between courses.
+
+### Course ledger or domain ledger
+
+The test is not whether an item is important, or whether it will come up again. It is whether the item survives its course as a thing with its own identity.
+
+A term, a definition, a formula, a notation convention, a named theorem, a physical constant, a conjugation table: each of these existed before the syllabus and outlives it, so it goes in the domain ledger. A competency shaped by how a course sequenced its material — "solving compound inequalities," "graphing linear functions" — goes in the course ledger, and a syllabus section always does.
+
+To settle an edge case quickly: if the student transferred schools mid-degree, which rows would still describe something real?
+
+Recording an item at the domain level is also what stops the same knowledge fragmenting across courses. When a later course touches the slope formula, update the existing domain row and its history carries forward, rather than a second row appearing in a second ledger with its own mastery rating and its own spacing schedule while the first quietly rots.
+
+Some notation genuinely belongs to several subjects at once. Let it appear in each subject's domain ledger rather than building a cross-subject store — mild duplication is cheaper than reintroducing coupling between subjects, and anything truly universal about how this student handles notation belongs in `data/student-profile.md` anyway.
 
 Update rules:
 
-- One entry per topic or sub-skill, fine-grained: "log rules," not "algebra."
-- Every entry carries: mastery estimate, last-reviewed date, next-due date, error-bucket tally, resources already tried.
+- One ledger row per topic or sub-skill, fine-grained: "log rules," not "algebra."
+- Every row carries: mastery estimate, last-reviewed date, next-due date, error-bucket tally, resources already tried.
 - Update the date and mastery estimate any time a topic is touched, even in passing.
 - **Don't upgrade mastery on a single correct answer.** Require it to hold across a session or a spaced recheck before moving shaky → solid. One hit isn't retention, and an inflated model produces review sessions that skip exactly what needed reviewing.
+- **The Notes column is one line.** A short characterization plus a pointer to the dated log entry holding the detail: `sign-flip slip under division; see log 2026-09-03`. Narrative goes in the log. This is not a style preference — a markdown table cell cannot contain a line break, so narrative written into a Notes cell lands on one enormous physical line, which makes the row unreadable, makes `git log -p` useless for auditing that row, and makes the ledger expensive to load every session.
+- A row whose Notes cell has outgrown one line is a row due for compaction.
 
 Mastery scale: **New** (unassessed) · **Shaky** (b/d errors present, under 3 clean reps) · **Solid** (3+ consecutive correct spaced reviews) · **Maintenance** (solid, on the long-interval hold).
+
+### Compaction
+
+Compaction moves accumulated narrative out of a ledger's Notes column and into the log where it belongs, so the ledger stays scannable while the history stays intact.
+
+**Compaction is a move, not a summary.** Relocate the narrative verbatim into the dated log entry it already belongs to, and leave the Notes cell holding a short characterization and that date. Nothing is condensed, paraphrased, or dropped in the ordinary case, which makes the ordinary case lossless by construction. Condense only where a Notes cell accumulated commentary across several sessions with no single matching log entry, and say so when you do rather than condensing silently.
+
+**Trigger: a unit of material finishing.** A topic's rows are hot while its material is being taught and tested, because test-prep weighting reads them directly. Once its test closes, that material becomes maintenance rather than active and the ledger no longer needs the narrative inline. So compact a chapter's or unit's rows once its test has closed. Never compact material in the run-up to a test on that same material. Where a course has no chapter tests, use whatever boundary it does have — module, unit, exam — and absent any structure at all, compact at course completion as part of archival.
+
+**Snapshot first, tagged.** Every compaction pass is preceded by a dedicated commit holding the verbose state and nothing else, tagged so it is retrievable by name instead of by hunting SHAs:
+
+```
+git add data/ && git commit -m "pre-compact snapshot: mat1033 ch2-3"
+git tag pre-compact-mat1033-ch2-3
+```
+
+Then compact, then commit the compacted state separately. Two commits per pass, so the diff between them is exactly what compaction changed.
+
+**Pre-compaction detail stays recoverable, and future sessions need to know that.** A compacted Notes cell points at a dated log entry; that entry holds the full narrative and is the first place to look. If a row is still ambiguous after checking the log, the pre-compaction state is in git: `git show pre-compact-<course>-<unit>:data/subjects/<subject-slug>/<course-slug>.md`, or `git log -p` against the ledger. **Never treat a terse Notes cell as evidence that no detail was ever recorded, and never re-derive a mastery rating from conversation memory when the history is one command away.** The risk compaction introduces isn't lost data, it's a later session seeing a thin row and assuming thin history.
 
 ## Course backlog
 
 Maintain `data/course-backlog.md` — completed, in progress, and planned, each tagged with its subject. Update it whenever the student mentions starting, finishing, or planning a course, then commit.
 
-This file is what tells the review system *what's eligible for decay*: material from completed or trailing courses, never the current one. Reviewing the course they're actively in isn't maintenance, it's just homework help with extra steps.
+This file is what tells the review system *what's eligible for decay*: course-topic material from completed or trailing courses, never the current one. Re-reviewing the applied skills of the course they're actively in isn't maintenance, it's just homework help with extra steps.
 
-When asked for planning help, cross-reference the backlog against the student model so recommendations account for what's actually shaky, not just what comes next chronologically.
+**Domain items are the exception, and it's a principled one.** Rows in a subject's `_domain.md` are decay-eligible from the moment they're learned, including while the course that introduced them is still running. Memorized facts decay on a different clock than applied skills: drilling weeks 1 through 5 vocabulary during week 6 is exactly what spaced repetition is for, and a course with cumulative exams assumes the student is doing it. The no-active-course rule exists to stop the tutor from re-teaching this week's homework, which drilling a term or a formula does not do.
+
+It is also the index. Each row names that course's ledger and log paths, so locating a course's data is a lookup rather than a search. When a course starts, add its row and create its ledger and log from the templates in the same pass, so a row never points at a file that doesn't exist.
+
+When a course finishes, move it to Completed, move its log to `data/archive/<course-slug>.md`, and update the row's log path. The ledger stays under `data/subjects/` — its topic rows are exactly what the maintenance deck now selects from.
+
+When asked for planning help, cross-reference the backlog against the relevant ledgers so recommendations account for what's actually shaky, not just what comes next chronologically.
 
 ## Maintenance deck
 
@@ -178,11 +269,12 @@ Trigger: "run maintenance," "review," "quiz me," "keep me sharp," or a completed
 
 ### Selecting items
 
-Working **within one subject**:
+Working **within one subject**, drawing from two places: that subject's `_domain.md`, and the ledgers of its decay-eligible courses.
 
 1. Anything overdue per the spacing ladder, lowest mastery first.
 2. Weight toward topics that are prerequisites for the current or next course in the backlog — decayed prerequisites are the highest-value catches, because they're what silently wrecks the next course.
-3. Session size is mode-specific (see the mode file); default to roughly 8–12 items or 10–15 minutes for problem-shaped work, so it stays sustainable inside a compressed term.
+3. Domain items qualify even when their originating course is still active (see the exception under Course backlog). Course topic rows from an active course do not.
+4. Session size is mode-specific (see the mode file); default to roughly 8–12 items or 10–15 minutes for problem-shaped work, so it stays sustainable inside a compressed term.
 
 ### Spacing ladder
 
@@ -205,14 +297,14 @@ Standard spaced repetition assumes months of runway; a 7-week term doesn't have 
 
 ## Test prep quiz
 
-Trigger: an upcoming chapter/unit test in the student's **current, active** course. This is distinct from the maintenance deck below: maintenance targets decayed material from completed or trailing courses, while test prep targets material the student is currently being tested on — freshly learned, not yet decayed, but not yet proven durable under exam conditions either.
+Trigger: an upcoming chapter/unit test in the student's **current, active** course. This is distinct from the maintenance deck above: maintenance targets decayed material from completed or trailing courses, while test prep targets material the student is currently being tested on — freshly learned, not yet decayed, but not yet proven durable under exam conditions either.
 
 Goal: subject-matter mastery across the full tested scope by the test date, not just working through the backlog in order.
 
 ### Building the set
 
 1. **Full coverage.** Every syllabus section going into the test (per `course-backlog.md`'s module schedule) gets at least one item, even topics already rated Solid — a chapter test doesn't skip what's already easy, and skipping it here would leave a false sense of full coverage.
-2. **Weight toward the student model.** Anything rated Shaky, any topic with a logged recurring (c) pattern (not a one-off slip), and any topic near the test date with no cold rep yet gets more items than a topic already Solid. Pull the weighting directly from `data/student-model.md`, not from memory of the conversation.
+2. **Weight toward the student model.** Anything rated Shaky, any topic with a logged recurring (c) pattern (not a one-off slip), and any topic near the test date with no cold rep yet gets more items than a topic already Solid. Pull the weighting directly from that course's ledger, not from memory of the conversation. Where a Notes cell points at a dated log entry and the weighting turns on what actually happened, read that one entry.
 3. **One item at a time**, same protocol as normal coaching — pose it, let them work it, don't confirm or deny until they've shown their reasoning.
 4. **On a miss:** coach it to a correct outcome using the normal hint ladder and error taxonomy, same as any other coaching item. Then **generate a new, different item testing that same specific sub-skill** and add it to the set — don't just move on once the original is patched up. The set is extensible for exactly this reason: a miss adds work, it doesn't just get corrected in place.
 5. Keep generating and quizzing until every sub-skill scoped for the test has at least one cold, unaided correct rep in this pass. A topic that took a miss-then-correction isn't cleared until it earns one more clean item after the correction — the same "don't upgrade mastery on a single correct answer" rule from the student model applies here too.
@@ -225,7 +317,7 @@ The default above is interactive: one item at a time, confirm-or-deny withheld u
 
 ### Tracking
 
-Log the running set for the current test in `data/student-model.md`, in the session log for that subject, not as a separate ledger — same file, same partition-by-subject rule everything else follows. Record what was asked, correct or miss, and whether a re-quiz item was generated and subsequently cleared, same level of detail as any other logged session. Update topic rows' mastery and next-due fields as items clear, exactly as in normal coaching.
+Log the running set for the current test as an ordinary dated entry in that course's log at `data/logs/<course-slug>.md`, not as a separate tracker. Record what was asked, correct or miss, and whether a re-quiz item was generated and subsequently cleared, at the same level of detail as any other logged session. Update the ledger's topic rows — mastery, next-due, error tallies, and a one-line Notes pointer to that entry — as items clear, exactly as in normal coaching.
 
 This is standing practice for every chapter/unit test in every subject going forward, not a one-off arrangement for a single course.
 
@@ -240,7 +332,7 @@ Rules:
 - **One task per subject**, so every firing is subject-scoped by construction.
 - **Propose, then ask.** Creating a scheduled task is persistent configuration that outlives the session, so it needs explicit agreement each time — never create one silently.
 - **Record the outcome in `data/review-schedule.md`**, including declines. The tasks live outside the repo, so without this file you'll re-pitch something they already turned down, which gets annoying fast.
-- Don't propose a refresher for the course they're currently in. That's active material.
+- Don't propose a refresher over the *topic rows* of the course they're currently in. That's active material. A refresher drawing on the subject's `_domain.md` is fine even mid-course, for the reason given under Course backlog: terms and formulas are due for review on their own schedule, and drilling them isn't re-teaching this week's homework.
 
 Mechanics, failure modes, and the prompt template for the scheduled task itself: `references/scheduled-refreshers.md`. Read it before creating or modifying any scheduled task.
 

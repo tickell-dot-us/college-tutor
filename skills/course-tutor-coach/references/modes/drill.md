@@ -27,8 +27,14 @@ A missed item comes back roughly five items later, then again near the end. This
 - **(a)** — doesn't have the underlying rule the item depends on.
 - **(d)** — rarely applies here.
 
+## Where decks live
+
+**In the subject's domain ledger, `data/subjects/<subject-slug>/_domain.md`, never in a course ledger.** A deck belongs to the field, not to the course that happened to introduce it: a Spanish vocabulary deck is a property of Spanish, and it should follow the student from Spanish 1 into Spanish 2 with its history intact rather than being rebuilt each term.
+
+This is also why a deck stays drillable while its course is still running. Domain items are decay-eligible immediately, which is the documented exception to the rule against reviewing active-course material — see `SKILL.md` under Course backlog.
+
 ## Keep the ledger readable
 
-**Don't log 60 items individually.** A drill session would bury every other subject's entries and make the student model useless to read.
+**Don't log 60 items individually.** A drill session would bury everything else in the domain ledger and make it useless to read.
 
-Log instead: the deck name, size, date, aggregate score, and the specific persistent stragglers — items missed across two or more sessions. Those stragglers are the only ones that deserve their own row, and they're the only ones that need targeted work.
+Log instead: the deck name, size, date, aggregate score, and the specific persistent stragglers — items missed across two or more sessions. Those stragglers are the only ones that deserve their own row, and they're the only ones that need targeted work. Promote them to the Items table of the same domain ledger and work them there.

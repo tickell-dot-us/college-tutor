@@ -16,10 +16,24 @@ Three things, sharing one set of data files:
 skills/course-tutor-coach/SKILL.md              — the shared coaching protocol and subject registry
 skills/course-tutor-coach/references/modes/     — six practice modes (see below)
 skills/course-tutor-coach/references/           — spacing research; image handling; refreshers
-data/student-model.md                           — YOUR live mastery/error ledger, partitioned by subject
-data/course-backlog.md                          — YOUR live course tracker
+data/student-profile.md                         — YOU: how you learn, across every course
+data/course-backlog.md                          — YOUR course tracker, and the index to everything below
 data/review-schedule.md                         — YOUR scheduled refreshers: active, proposed, declined
+data/subjects/<subject>/<course>.md             — one mastery/error ledger per course
+data/subjects/<subject>/_domain.md              — terms, formulas and vocab decks for the whole subject
+data/logs/<course>.md                           — one session history per course
+data/archive/<course>.md                        — session histories of finished courses
 ```
+
+### Things you memorize don't belong to one class
+
+Vocabulary, formulas, notation, constants, named theorems: these belong to the subject, not to whichever course introduced them. They live in that subject's `_domain.md` and carry forward, so a formula you learned in intermediate algebra is still being reviewed while you're in calculus, with its history intact rather than starting over as a new entry.
+
+They're also the one thing reviewed while the course that introduced them is still running. Re-teaching this week's homework isn't review, but drilling terms from week one during week six is, and a course with cumulative exams expects you to be doing it.
+
+### Why it's split up like that
+
+One file per course, rather than one file for everything, because the everything-file doesn't survive a degree. Your mastery ledger and your session history both grow every time you sit down, and a single file holding four years of both eventually gets too large to open, too slow to work with, and useless to inspect in version history. Splitting by course keeps what any one session has to load roughly constant, whether it's your first term or your last.
 
 ### The six practice modes
 
@@ -53,9 +67,15 @@ Overdue work in other subjects reaches you three ways only: a one-line note at t
 
 ## Your data files are live, not templates
 
-`data/student-model.md`, `data/course-backlog.md`, and `data/review-schedule.md` are **not templates you copy** — they're the real, tracked files from the moment you create your copy of this repo. Claude reads and updates them at those exact paths.
+`data/student-profile.md`, `data/course-backlog.md`, and `data/review-schedule.md` are **not templates you copy** — they're the real, tracked files from the moment you create your copy of this repo. Claude reads and updates them at those exact paths. Per-course files get created as you start courses, at paths recorded in your backlog.
 
-Because they're files in a git repo, their history is your history: `git log -p -- data/student-model.md` shows exactly how your record changed and when.
+The two files whose names start with an underscore (`data/subjects/_course-ledger-template.md` and `data/logs/_course-log-template.md`) *are* templates. Claude copies them when a course starts. Leave them alone.
+
+Because they're files in a git repo, their history is your history: `git log -p -- data/subjects/math-statistics/mat1033.md` shows exactly how your record in that course changed and when.
+
+### Your work lives on your machine
+
+The repo on your own computer is the real one. If Claude is working from a cloud session, anything it writes only counts once it's committed to that repo, and it's only backed up once you push. Claude checks it's actually connected to your repo before writing anything, reports the commit it made at the end of each session, and tells you how many commits are sitting unpushed.
 
 ## Setting up your copy
 

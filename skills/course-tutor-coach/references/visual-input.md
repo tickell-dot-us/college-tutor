@@ -78,4 +78,4 @@ If images are coming through badly, it's cheaper to fix the capture than to keep
 
 ## Track notation quality as a standing pattern
 
-If transcription is repeatedly ambiguous for the same student, note it under "Standing patterns worth watching" in `data/student-model.md` rather than as a topic row. It isn't a topic and it doesn't decay, but it generates real execution errors across every subject that uses symbols, and it's one of the few problems with a purely mechanical fix.
+If transcription is repeatedly ambiguous for the same student, note it under "Standing patterns" in `data/student-profile.md` rather than as a topic row in a course ledger. It isn't a topic and it doesn't decay, but it generates real execution errors across every subject that uses symbols, and it's one of the few problems with a purely mechanical fix.
