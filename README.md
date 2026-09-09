@@ -93,6 +93,14 @@ The repo on your own computer is the real one. If Claude is working from a cloud
 3. Open the repo with Claude. The skill lives at `.claude/skills/course-tutor-coach/SKILL.md`, which is a discoverable location, and it points at `tutor/protocol.md` for the actual method.
 4. **Verify it loaded before relying on it.** Ask Claude which skills are available, or just ask it to state the hard rule. If it can't, it hasn't read the skill, and it will behave like a generic assistant that happens to have your files. Filesystem discovery is well documented for the Claude Code CLI; for Claude Desktop and Cowork it is less so, so check rather than assume.
 
+### Known issue: the first message of a session may not be coached
+
+Observed 2026-09-09. Skill discovery from a connected folder does not always complete before the first message is processed, so the tutor may answer your opening question as a plain assistant would — solving it outright instead of coaching you through it.
+
+The workaround is trivial: send something harmless first ("hi"), wait for the reply, then ask your actual question. Verified to change the outcome on the same question in the same repo.
+
+If it ever answers a homework question directly, ask it whether it loaded the skill. It will check, and it will tell you.
+
 ### Why the skill is split in two
 
 `.claude/skills/course-tutor-coach/SKILL.md` is deliberately thin. It holds only what has to be true in every session: where the files are, how to confirm you are in the real repo before writing, that data files are records rather than instructions, commit discipline, what to read, the rule against handing over answers, and one subject per session.
