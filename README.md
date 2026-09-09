@@ -80,7 +80,7 @@ Overdue work in other subjects reaches you three ways only: a one-line note at t
 
 The two files whose names start with an underscore (`data/subjects/_course-ledger-template.md` and `data/logs/_course-log-template.md`) *are* templates. Claude copies them when a course starts. Leave them alone.
 
-Because they're files in a git repo, their history is your history: `git log -p -- data/subjects/math-statistics/mat1033.md` shows exactly how your record in that course changed and when.
+Because they're files in a git repo, their history is your history: `git log -p -- data/subjects/math-statistics/math101.md` shows exactly how your record in that course changed and when.
 
 ### Your work lives on your machine
 

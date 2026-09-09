@@ -31,7 +31,7 @@ One more file per *subject*, not per course:
 
 - `data/subjects/<subject-slug>/_domain.md` — the domain ledger: terms, formulas, notation, theorems, constants, and drill decks that belong to the field rather than to any one course.
 
-Subject slug is the lowercased hyphenated subject-registry name (Math & Statistics becomes `math-statistics`); course slug is the lowercased course code (MAT1033 becomes `mat1033`). Create a new ledger, domain ledger, or log by copying `data/subjects/_course-ledger-template.md`, `data/subjects/_domain-ledger-template.md`, or `data/logs/_course-log-template.md` rather than composing one from scratch, so the columns and conventions stay identical everywhere.
+Subject slug is the lowercased hyphenated subject-registry name (Math & Statistics becomes `math-statistics`); course slug is the lowercased course code (MATH101 becomes `math101`). Create a new ledger, domain ledger, or log by copying `data/subjects/_course-ledger-template.md`, `data/subjects/_domain-ledger-template.md`, or `data/logs/_course-log-template.md` rather than composing one from scratch, so the columns and conventions stay identical everywhere.
 
 If a file is missing (corrupted checkout, manual deletion), recreate it from the template — but flag it to the student and confirm first, because regenerating destroys history that an untracked deletion could still recover via `git log` / `git checkout`.
 
