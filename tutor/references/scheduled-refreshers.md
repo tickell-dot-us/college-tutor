@@ -45,7 +45,7 @@ The task's job is to **prepare and surface**: read the model, select what's due 
 
 Each firing starts a **fresh session with no memory of this conversation**, so the prompt has to stand completely alone:
 
-> Open the college-tutor repo and read `skills/course-tutor-coach/SKILL.md`, then `data/student-profile.md` and `data/course-backlog.md`, then the ledgers for this subject's decay-eligible courses named in the backlog.
+> Open the college-tutor repo and read `.claude/skills/course-tutor-coach/SKILL.md` and `tutor/protocol.md`, then `data/student-profile.md` and `data/course-backlog.md`, then the ledgers for this subject's decay-eligible courses named in the backlog.
 >
 > Run a maintenance-deck check for **<SUBJECT> only**. Do not include topics from any other subject, and do not switch subjects.
 >

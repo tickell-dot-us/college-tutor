@@ -32,7 +32,7 @@ Kind is one of: term · formula · notation · theorem · constant · rule
 
 ## Decks
 
-Aggregate rows for high-volume memorization, per `references/modes/drill.md`: never log 60 items individually. A deck gets one row; items missed across two or more sessions get promoted to the Items table above and worked there.
+Aggregate rows for high-volume memorization, per `tutor/references/modes/drill.md`: never log 60 items individually. A deck gets one row; items missed across two or more sessions get promoted to the Items table above and worked there.
 
 | Deck | Size | Last drilled | Aggregate score | Next due | Persistent stragglers |
 |---|---|---|---|---|---|

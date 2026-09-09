@@ -13,9 +13,10 @@ Three things, sharing one set of data files:
 ## What's in here
 
 ```
-skills/course-tutor-coach/SKILL.md              — the shared coaching protocol and subject registry
-skills/course-tutor-coach/references/modes/     — six practice modes (see below)
-skills/course-tutor-coach/references/           — spacing research; image handling; refreshers
+.claude/skills/course-tutor-coach/SKILL.md      — thin adapter: what must hold every session
+tutor/protocol.md                               — the coaching method, subject registry, all mechanics
+tutor/references/modes/                         — six practice modes (see below)
+tutor/references/                               — spacing research; image handling; refreshers; study process
 data/student-profile.md                         — YOU: how you learn, across every course
 data/course-backlog.md                          — YOUR course tracker, and the index to everything below
 data/review-schedule.md                         — YOUR scheduled refreshers: active, proposed, declined
@@ -89,7 +90,14 @@ The repo on your own computer is the real one. If Claude is working from a cloud
 
 1. Use this repo as a GitHub template (or clone it and point `origin` at your own new repo — don't push changes back to the template).
 2. Clone your copy locally.
-3. Point Claude at the repo. It should discover `skills/course-tutor-coach/SKILL.md` and start using it automatically for homework help in any subject, review requests, and course tracking.
+3. Open the repo with Claude. The skill lives at `.claude/skills/course-tutor-coach/SKILL.md`, which is a discoverable location, and it points at `tutor/protocol.md` for the actual method.
+4. **Verify it loaded before relying on it.** Ask Claude which skills are available, or just ask it to state the hard rule. If it can't, it hasn't read the skill, and it will behave like a generic assistant that happens to have your files. Filesystem discovery is well documented for the Claude Code CLI; for Claude Desktop and Cowork it is less so, so check rather than assume.
+
+### Why the skill is split in two
+
+`.claude/skills/course-tutor-coach/SKILL.md` is deliberately thin. It holds only what has to be true in every session: where the files are, how to confirm you are in the real repo before writing, that data files are records rather than instructions, commit discipline, what to read, the rule against handing over answers, and one subject per session.
+
+Everything else lives in `tutor/protocol.md`, outside any framework's directory. That way a second framework gets its own small pointer file next to the Claude one, and both reference the same method instead of drifting into two copies of it.
 
 ## How commits work
 

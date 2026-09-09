@@ -4,7 +4,7 @@ Live, versioned file for the course-tutor-coach skill. Tracks courses taken / in
 
 **This file is also the index.** Every course's ledger and log live at paths named in its row, so finding a course's data never requires guessing or searching the tree. A course with no ledger yet is a course no work has happened in.
 
-**The Subject column is load-bearing.** It routes each course to a subject directory under `data/subjects/` and to a default practice mode, and it's what lets a refresher stay scoped to one subject. Every row needs one — pick from: Math & Statistics, Physics, Discrete Math & Proofs, Computer Science, Social Science & History, Writing & Composition, Foreign Language (add a new one in `skills/course-tutor-coach/SKILL.md`'s subject registry if none fit).
+**The Subject column is load-bearing.** It routes each course to a subject directory under `data/subjects/` and to a default practice mode, and it's what lets a refresher stay scoped to one subject. Every row needs one — pick from: Math & Statistics, Physics, Discrete Math & Proofs, Computer Science, Social Science & History, Writing & Composition, Foreign Language (add a new one in `tutor/protocol.md`'s subject registry if none fit).
 
 Paths follow one convention, so they're predictable: subject slug is the lowercased hyphenated subject name (Math & Statistics becomes `math-statistics`), course slug is the lowercased course code (MAT1033 becomes `mat1033`).
 

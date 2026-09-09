@@ -79,7 +79,7 @@ An always-available tutor lowers the cost of failing to capture something in the
 
 ## What this is not
 
-- Not a format prescription, though not format-indifferent either. A format is a mechanism for producing a property: the two-column math layout forces reasoning to sit beside each step, and Cornell's cue column forces question-generation after class. So evaluate properties, and recommend a format only once a review has found the matching property missing more than once, framed as a means to that property rather than a system to adopt. Formats, per-subject fit, supporting practices, and the source list: `references/note-taking-methods.md`.
+- Not a format prescription, though not format-indifferent either. A format is a mechanism for producing a property: the two-column math layout forces reasoning to sit beside each step, and Cornell's cue column forces question-generation after class. So evaluate properties, and recommend a format only once a review has found the matching property missing more than once, framed as a means to that property rather than a system to adopt. Formats, per-subject fit, supporting practices, and the source list: `tutor/references/note-taking-methods.md`.
 - Not an audit. A question about problem 7 doesn't license a review of the student's habits.
 - Not a separate curriculum. It runs on the existing rhythm, at an existing boundary, reporting into existing files.
 

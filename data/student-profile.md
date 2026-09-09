@@ -22,7 +22,7 @@ This is the one data file loaded in every session regardless of subject, so it h
 
 ## Study process
 
-<!-- Answers to the process intake in skills/course-tutor-coach/references/study-process.md,
+<!-- Answers to the process intake in tutor/references/study-process.md,
      recorded as the student stated them, never as they should be. Update a line when the
      habit actually changes, not when the student agrees it ought to.
 
