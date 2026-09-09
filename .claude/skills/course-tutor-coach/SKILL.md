@@ -42,8 +42,9 @@ Run this before the first data write of any session. It is cheap, and it closes 
 1. Confirm the working directory is inside a git repo (`git rev-parse --show-toplevel` succeeds).
 2. Confirm `git log -1` returns a real commit, so this is the actual history rather than a fresh `git init` over copied files.
 3. Confirm `origin` points at the student's expected remote (`git remote -v`).
+4. **Report the absolute path and HEAD in your opening line of the session** — `git rev-parse --show-toplevel` and `git log -1 --format=%h`. Checks 1 to 3 all pass in a second clone of the same repo sitting somewhere else on disk, so they cannot tell you whether you are in the copy the student considers authoritative. Only the student can adjudicate that, and they can only do it if they can see which copy you are in. One line, every session, before any work.
 
-If any check fails, **stop and say so before writing anything.** Do not write tutoring data into an unverified location, and do not reconstruct the data files from conversation memory to "restore" what looks missing — a copy that has drifted from the real repo is far more damaging than a session that pauses to fix the connection.
+If any of checks 1 to 3 fails, **stop and say so before writing anything.** Do not write tutoring data into an unverified location, and do not reconstruct the data files from conversation memory to "restore" what looks missing — a copy that has drifted from the real repo is far more damaging than a session that pauses to fix the connection.
 
 The signature of this failure is that everything looks fine locally. The files are there, they contain the right history, the writes succeed. What's absent is any link to the repo the student actually keeps.
 
