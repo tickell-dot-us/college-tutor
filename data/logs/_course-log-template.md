@@ -12,7 +12,7 @@ Append-only, most recent first. Ledger: `data/subjects/<subject-slug>/<course-sl
 
 **Entry discipline.** One entry per session, headed by its date. Keep an entry to roughly a paragraph or two: what was worked, what was missed and how it was classified, what changed in the ledger as a result. An entry is a record of a session, not a transcript of it. If an entry is running long, the excess usually belongs in the ledger as a mastery change or in `data/student-profile.md` as a standing pattern.
 
-Never read this whole file in a session. Read the most recent few entries, or search it by date when a ledger row points at one.
+Never read this whole file in a session. Read the most recent few entries, or search it by date when a ledger row points at one. Structural entries (compaction, migration, archival) do not count as one of those few: skip past them to the most recent entry that records an actual session, and head each one with a skip-past note when you write it.
 
 <!-- Add new entries at the top of this section, oldest at the bottom.
 
