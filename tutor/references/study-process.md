@@ -28,6 +28,21 @@ Each question has a defensible better answer, and the tutor should be able to gi
 - **Notice what the instructor emphasized** (§2.4). Most instructors test what they stressed in class, so relative emphasis is information worth recording.
 - **Ask early** (§2.3). Waiting for confusion to resolve itself rarely works in a subject where each week depends on the last.
 
+## Before a new section: the prospective brief
+
+The notes review below is retrospective. On its own it only tells a student what went wrong after it has gone wrong. When they are about to start a new section — `data/course-backlog.md`'s module schedule says when — or when they ask how to take notes for what is coming, give a short brief rather than general advice.
+
+Keep it to a handful of lines. A brief that runs long does not get read before class.
+
+- **Date and section number at the top of the page.** The cheapest item here and the one most often skipped. Every ledger row that points at a dated log entry depends on it; a page with no date cannot be pointed at.
+- **Say what not to write.** Definitions, boxed rules and numbered procedures already in the text or on the slides do not need a second handwritten copy. Note where they live instead, and write out a step only when its order is the thing likely to be misremembered. The attention saved goes to listening.
+- **Say what to listen for.** Spoken reasoning that never reaches the board, why one approach was chosen over another, and whatever the instructor visibly emphasizes. That material exists nowhere else once the lecture ends.
+- **Give the conditions of application for this specific section.** Not the formulas, which the book already has, but the decision rules: given this shape of problem, which tool. This is the property most often missing from real notes, and it is what a test actually asks.
+- **Tie it to their own record.** Pull the two or three recurring patterns from the course ledger and the subject's `_domain.md` that this material is most likely to trip, and say what to guard against. A brief that could have been written for anyone is generic advice with a date on it. The value here is that you know what this student actually gets wrong.
+- **Recommend a layout only if a review has earned it.** A format is a means to a property (see `tutor/references/note-taking-methods.md`). Suggest one when a review has found the matching property missing more than once, not as a default.
+
+If the student wants a reusable fillable note sheet built from this, that artifact belongs in the instance repo alongside their other study aids, never in the skill layer.
+
 ## The notes review
 
 **Cadence: once per chapter or unit, at the boundary where its test closes.** That seam already carries the compaction pass, so testing, compaction, and the notes review run on one rhythm instead of three. Where a course has no chapter tests, use whatever boundary it has.

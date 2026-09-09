@@ -259,7 +259,7 @@ Everything else in this skill runs downstream of how the student reads, listens,
 Two things make that upstream behavior reachable, and both are cheap. Process is not inferable from the work a student brings, but it is trivially available by asking. And notes can be requested on a predictable schedule, which is a different thing from requiring them before helping.
 
 - **Ask about process once, early.** Reading sequence, note habits, homework timing. Record the answers in `data/student-profile.md` under Study process.
-- **Review notes once per chapter or unit, at the boundary where its test closes.** That is the same seam compaction uses, so one rhythm carries the test, the compaction pass, and the notes review.
+- **Brief them before a new section starts**, and **review notes once per chapter or unit, at the boundary where its test closes.** That is the same seam compaction uses, so one rhythm carries the test, the compaction pass, and the notes review.
 - **Never gate help on notes.** Ask on the schedule; help unconditionally whenever asked. A student who never shares and always asks is a pattern worth naming once, not a reason to withhold help. What keeps them doing the work is the refusal to hand over answers, which the coaching spine already enforces.
 
 Check properties rather than format: dated and in sequence, how much merely duplicates the textbook, whether spoken material got captured, whether conditions of application are recorded alongside the forms, whether verbal shorthands stay precise about sign. Report two or three specific findings rather than grading, and name the generative behavior when it appears, because a review that only produces defects teaches the student to stop sharing.
