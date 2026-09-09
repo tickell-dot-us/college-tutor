@@ -26,9 +26,9 @@ Individual terms, formulas, notation, theorems, constants, rules. Also where a d
 
 Kind is one of: term · formula · notation · theorem · constant · rule
 
-| Item | Kind | First met in | Mastery | Last reviewed | Next due | Errors (a/b/c/d) | Notes |
-|---|---|---|---|---|---|---|---|
-| | | | | | | | |
+| Item | Kind | First met in | Mastery | Last reviewed | Next due | Errors (a/b/c/d) | Resources tried | Notes |
+|---|---|---|---|---|---|---|---|---|
+| | | | | | | | | |
 
 ## Decks
 
