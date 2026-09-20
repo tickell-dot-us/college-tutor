@@ -23,8 +23,17 @@ data/review-schedule.md                         — YOUR scheduled refreshers: a
 data/subjects/<subject>/<course>.md             — one mastery/error ledger per course
 data/subjects/<subject>/_domain.md              — terms, formulas and vocab decks for the whole subject
 data/logs/<course>.md                           — one session history per course
+data/logs/<course>-relocated.md                 — older detail moved out of the ledger, kept verbatim
 data/archive/<course>.md                        — session histories of finished courses
 ```
+
+### Your test results move your record
+
+When you report a graded test, the tutor doesn't just write the score down. It looks up which sections that test covered, walks every topic row inside that scope, and updates each one, or says why it's leaving a row alone. A test that touched a topic and left no mark on that topic's row is treated as a bug.
+
+This matters more than it sounds. A real, proctored, closed-book test is better evidence about what you know than anything the tutor can build for you, and it costs you nothing extra. Without this step the tutor ends up handing you practice problems to re-prove material you already proved in an exam room, which is the most expensive possible way to fix a missing update.
+
+Where a score can't be broken down per question, it says so rather than guessing, and asks you to open the per-question view if the difference would actually change a rating.
 
 ### Things you memorize don't belong to one class
 

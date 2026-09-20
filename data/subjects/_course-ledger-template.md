@@ -16,7 +16,13 @@ Error buckets: **(a)** prerequisite gap · **(b)** current-concept misunderstand
 
 Don't upgrade a mastery rating from a single correct answer; require it to hold across a session or a spaced recheck first.
 
-**The Notes column is capped at one line.** It holds a short characterization plus a pointer to the dated log entry carrying the detail, like `sign-flip slip under division; see log 2026-09-03`. Full narrative goes in the log, never here. A row whose Notes cell has grown past one line is a row due for compaction (see the compaction protocol in `SKILL.md`).
+**The Notes cell has a hard budget of 200 characters.** It holds a short characterization plus a pointer to the dated entry carrying the detail, like `sign-flip slip under division; see log 2026-09-03`. Full narrative goes in the log, never here.
+
+**The budget is enforced when you write, not repaired later.** If an update would push a cell past 200 characters, the detail goes into today's log entry and the cell is rewritten as characterization plus pointer, in that same write. A cell that is allowed to grow and be cleaned up later never gets cleaned up fast enough: see the compaction protocol in `tutor/protocol.md`.
+
+To check this file at any time, print its longest cell: `awk -F'|' '/^\|/ {s=$(NF-1); gsub(/^[ \t]+|[ \t]+$/,"",s); if (length(s)>m) m=length(s)} END {print m}' <this file>`.
+
+A row waiting on something the student owes carries `HELD: <what is awaited>` here, inside the same budget.
 
 | Topic (fine-grained) | Mastery | Last reviewed | Next due | Errors (a/b/c/d) | Resources tried | Notes |
 |---|---|---|---|---|---|---|

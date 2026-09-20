@@ -4,7 +4,9 @@ Cross-subject observations about how this student learns. Small, always read, ne
 
 This is the one data file loaded in every session regardless of subject, so it has to stay short. It holds patterns that travel between courses; anything that belongs to a single topic goes in that course's ledger instead, and anything that belongs to a single session goes in that course's log.
 
-**Keep this file bounded.** When a pattern is superseded, rewrite the line rather than adding a second one beneath it. When two lines describe the same underlying habit, merge them. A profile that grows without limit defeats the point of separating it from the per-course files.
+**Keep this file bounded: one line per standing pattern, 200 characters, plus a pointer.** Same discipline as a ledger row, for the same reason and more urgently, because this is the file every session in every course loads for as long as the student is in school. A short characterization and a pointer to where the pattern was named, like `reads slope and intercept off a derived equation in swapped order; see math101 log 2026-09-15`. The narrative behind a pattern goes to `data/logs/_profile-relocated.md`, which is cross-course on purpose: a standing pattern outlives the course that surfaced it, and a per-course log eventually moves into `data/archive/`.
+
+**Soft budget for the whole file: 8 KB.** Past that, patterns need merging, not a bigger budget. When a pattern is superseded, rewrite its line rather than adding a second one beneath it. When two lines describe the same underlying habit, merge them. A profile that grows without limit defeats the point of separating it from the per-course files, and it is the one file that scales with the student rather than with the course.
 
 ---
 

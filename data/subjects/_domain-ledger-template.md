@@ -16,9 +16,9 @@ A quick way to settle edge cases: if the student transferred schools mid-degree,
 
 **Domain items are decay-eligible immediately,** including while the course that introduced them is still active. This is the one place the "never review the active course" rule does not apply, and the reason is that memorized facts decay on a different clock than applied skills. Drilling weeks 1 through 5 vocabulary during week 6 is what spaced repetition is for; it is not a substitute for doing the current homework, and it does not become one.
 
-**One line per row.** Same discipline as a course ledger: a short characterization plus a pointer to the dated log entry carrying the detail, in whichever course's log it happened. Narrative never goes in a cell.
+**Cells are capped at 200 characters,** same discipline as a course ledger: a short characterization plus a pointer to the dated entry carrying the detail, in whichever course's log it happened. Narrative never goes in a cell, and the budget is enforced when you write rather than repaired by a later pass.
 
-Mastery scale and error buckets are the same as everywhere else. See `SKILL.md`.
+Mastery scale and error buckets are the same as everywhere else. See `tutor/protocol.md`.
 
 ## Items
 
@@ -42,6 +42,6 @@ Aggregate rows for high-volume memorization, per `tutor/references/modes/drill.m
 
 Subject-scoped patterns that are not individual knowledge items: error habits, procedural confusions, and note-taking defects specific to this field. Cross-subject patterns belong in `data/student-profile.md` instead, and anything tied to a single topic belongs in that topic's ledger row.
 
-One line each, same discipline as everywhere else: a short characterization plus a pointer to the dated log entry where it was seen. When a pattern is superseded, rewrite its line rather than adding a second one beneath it.
+One line each, capped at 200 characters like every other cell: a short characterization plus a pointer to the dated entry where it was seen. When a pattern is superseded, rewrite its line rather than adding a second one beneath it.
 
 <!-- - [first seen YYYY-MM-DD] short characterization of the pattern; see log YYYY-MM-DD -->

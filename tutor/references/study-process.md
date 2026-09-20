@@ -8,6 +8,8 @@ Specific practices below draw on Saltzman and Coffin, *How to Survive Your Colle
 
 Once per student, and again in a light form when a course starts in a subject with no history yet. Ask directly. None of this is inferable from the work the student brings.
 
+**These are slots that fill over time, not an interview.** Ask the set once, early. After that, record any answer the moment it surfaces in ordinary conversation, which is where most of them actually surface: a student mentions in passing that they watch the lecture before opening the book, and that is the answer to question 1, given for free. Write it down then. A slot still empty at a unit boundary gets one offer to fill it, per the unit-boundary check in `tutor/protocol.md`. What does not work is waiting for a sit-down. An intake modeled as a single event is an intake that does not happen, and the observed case is a Study process section holding nothing but its comment scaffolding eleven days on, with one answer already volunteered and never recorded.
+
 1. Do you read the section before lecture, after lecture, or not at all?
 2. Do you bring the book to class?
 3. When you read, one pass or several?
@@ -45,7 +47,7 @@ If the student wants a reusable fillable note sheet built from this, that artifa
 
 ## The notes review
 
-**Cadence: once per chapter or unit, at the boundary where its test closes.** That seam already carries the compaction pass, so testing, compaction, and the notes review run on one rhythm instead of three. Where a course has no chapter tests, use whatever boundary it has.
+**Cadence: once per chapter or unit, at the boundary where its test closes.** That seam carries result propagation, model reconciliation, the compaction pass and a health check as well, all of them as one block rather than as separate errands: see `## The unit-boundary check` in `tutor/protocol.md`. Where a course has no chapter tests, use whatever boundary it has.
 
 **Never a gate on help.** A student stuck late at night who is told to produce notes first learns that asking costs something. Ask for notes on the schedule; help whenever asked, without conditions.
 

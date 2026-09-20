@@ -11,6 +11,10 @@ Paths follow one convention, so they're predictable: subject slug is the lowerca
 - Ledger: `data/subjects/<subject-slug>/<course-slug>.md`
 - Log: `data/logs/<course-slug>.md`, moving to `data/archive/<course-slug>.md` once the course is completed
 
+**Record what each graded assessment covers.** Under an in-progress course, keep the module or unit schedule and, for each test, the sections it covers. This is not bookkeeping for its own sake: when a graded result comes back, the tutor has to enumerate the ledger rows that test exercised in order to update them, and rows that cannot be enumerated do not get updated. A course whose test scope is unrecorded will quietly accumulate stale mastery ratings no matter how well its tests go. See `## Graded assessments` in `tutor/protocol.md`.
+
+Source the scope from the instructor's own schedule where one exists, not from the catalog description or from the textbook's chapter structure.
+
 One file per subject sits alongside those and isn't indexed here, because it isn't tied to any course: `data/subjects/<subject-slug>/_domain.md` holds the terms, formulas, notation, and drill decks belonging to the field itself. It outlives every row in this file.
 
 ## Completed (decay-eligible)
