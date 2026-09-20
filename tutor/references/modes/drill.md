@@ -31,7 +31,7 @@ A missed item comes back roughly five items later, then again near the end. This
 
 **In the subject's domain ledger, `data/subjects/<subject-slug>/_domain.md`, never in a course ledger.** A deck belongs to the field, not to the course that happened to introduce it: a Spanish vocabulary deck is a property of Spanish, and it should follow the student from Spanish 1 into Spanish 2 with its history intact rather than being rebuilt each term.
 
-This is also why a deck stays drillable while its course is still running. Domain items are decay-eligible immediately, which is the documented exception to the rule against reviewing active-course material — see `SKILL.md` under Course backlog.
+This is also why a deck stays drillable while its course is still running. Domain items are decay-eligible immediately, which is the documented exception to the rule against reviewing active-course material — see `tutor/protocol.md` under Course backlog.
 
 ## Keep the ledger readable
 

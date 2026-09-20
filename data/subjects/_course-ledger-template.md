@@ -1,6 +1,6 @@
 # Course Ledger Template
 
-**This is a template, not live data.** Copy it to `data/subjects/<subject-slug>/<course-slug>.md` when a course starts, then delete this header block from the copy. Subject slugs are the lowercased, hyphenated form of the subject registry rows in `SKILL.md` (Math & Statistics becomes `math-statistics`).
+**This is a template, not live data.** Copy it to `data/subjects/<subject-slug>/<course-slug>.md` when a course starts, then delete this header block from the copy. Subject slugs are the lowercased, hyphenated form of the subject registry rows in `tutor/protocol.md` (Math & Statistics becomes `math-statistics`).
 
 One ledger per course. The ledger holds the table and nothing else: narrative belongs in `data/logs/<course-slug>.md`.
 
